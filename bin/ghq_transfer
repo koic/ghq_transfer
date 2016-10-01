@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+#
+# USAGE:
+#
+#   ghq_transfer [--debug] [--valth]
+#
+lib_path = File.expand_path('../../lib', __FILE__)
+$:.unshift(lib_path)
+
+require 'ghq_transfer'
+require 'ghq_transfer/version'
+require 'optparse'
+
+Version = GhqTransfer::VERSION
+
+options = {}
+
+opt = OptionParser.new("usage: ghq_transfer [--debug] [--valth]")
+
+opt.on('--debug', 'debug mode') {|v| options[:debug] = true }
+opt.on('--dry-run', 'dry run mode') {|v| options[:dry_run] = true }
+opt.on('--valth', 'apply mode') {|v| options[:valth] = true }
+opt.on('-v', '--version', 'version') {|v| options[:version] = true } # overwrite
+
+begin
+  opt.permute!(ARGV)
+
+  raise if options.empty?
+
+  if options[:version]
+    puts "ghq_transfer #{GhqTransfer::VERSION}"
+    exit
+  end
+
+  GhqTransfer::Core.new(options).run
+rescue
+  puts opt.help
+
+  exit!
+end

@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    ghq_transfer (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ghq_transfer!
+
+BUNDLED WITH
+   1.13.1
