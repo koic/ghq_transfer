@@ -11,7 +11,7 @@ Transfer local repositories from flatten directory style to [ghq](https://github
 Options:
 
 * `--dry-run` ... Dry run mode (First of all, You'll run this)
-* `--valth`` ... Apply mode
+* `--valth` ... Apply mode
 
 ## 1. Execute dry run mode
 
@@ -62,13 +62,13 @@ gem 'ghq_transfer'
 And then execute:
 
 ```sh
-$ bundle
+% bundle
 ```
 
 Or install it yourself as:
 
 ```sh
-$ gem install ghq_transfer
+% gem install ghq_transfer
 ```
 
 ## Contributing
