@@ -1,4 +1,4 @@
-# ghq_transfer
+# ghq_transfer [![Gem Version](https://badge.fury.io/rb/ghq_transfer.svg)](http://badge.fury.io/rb/ghq_transfer)
 
 Transfer local repositories from flatten directory style to [ghq](https://github.com/motemen/ghq) convention style.
 
@@ -25,6 +25,7 @@ Following the __dry run mode__.
 
 ```sh
 % ghq_transfer --dry-run
+*** dry run ***
 /Users/account/.ghq/rabbit -> /Users/account/.ghq/github.com/rabbit-shocker/rabbit
 /Users/account/.ghq/racc -> /Users/account/.ghq/github.com/tenderlove/racc
 /Users/account/.ghq/rack -> /Users/account/.ghq/github.com/rack/rack
@@ -45,6 +46,17 @@ Apply the ghq convention layout to your `ghq root` repositories.
 
 ```sh
 % ghq_transfer --valth
+*** valth!! ***
+/Users/account/.ghq/rabbit -> /Users/account/.ghq/github.com/rabbit-shocker/rabbit
+/Users/account/.ghq/racc -> /Users/account/.ghq/github.com/tenderlove/racc
+/Users/account/.ghq/rack -> /Users/account/.ghq/github.com/rack/rack
+/Users/account/.ghq/rack-attack -> /Users/account/.ghq/github.com/kickstarter/rack-attack
+/Users/account/.ghq/rack-cache -> /Users/account/.ghq/github.com/rtomayko/rack-cache
+/Users/account/.ghq/rack-mini-profiler -> /Users/account/.ghq/github.com/MiniProfiler/rack-mini-profiler
+/Users/account/.ghq/rack-pjax -> /Users/account/.ghq/github.com/eval/rack-pjax
+/Users/account/.ghq/rack-protection -> /Users/account/.ghq/github.com/rkh/rack-protection
+/Users/account/.ghq/rack-test -> /Users/account/.ghq/github.com/brynary/rack-test
+/Users/account/.ghq/rails -> /Users/account/.ghq/github.com/rails/rails
 ```
 
 :star2: __Execute apply mode after dry run mode, strongly recommended.__
