@@ -13,6 +13,8 @@ Options:
 * `--dry-run` ... Dry run mode (First of all, You'll run this)
 * `--valth` ... Apply mode
 
+The `--dry-run` option overrides the `--valth` option if both are used.
+
 ## 1. Execute dry run mode
 
 Example effect:

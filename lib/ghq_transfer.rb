@@ -9,6 +9,8 @@ module GhqTransfer
     end
 
     def run
+      puts valth? ? '*** VALTH!! ***' : '*** dry run ***'
+
       ghq_root = Pathname(`ghq root`.chomp)
 
       Dir.glob(ghq_root.join('*')).each do |src|
@@ -36,7 +38,7 @@ module GhqTransfer
 
           puts "#{src} -> #{dest_path}"
 
-          if @options[:valth]
+          if valth?
             FileUtils.mkdir_p(dest_dir)
 
             FileUtils.mv(src, dest_path)
@@ -48,6 +50,10 @@ module GhqTransfer
     end
 
     private
+
+    def valth?
+      @options[:dry_run].! && @options[:valth]
+    end
 
     def extract_paths_from_ssh(url)
       /git@(.+):(.+)\/(.+)/ === url
