@@ -1,4 +1,4 @@
-## master (unreleased)
+## 0.2.0 (2016-10-02)
 
 * The `--dry-run` option overrides the `--valth` option if both are used.
 
