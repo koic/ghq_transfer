@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
-#
-# USAGE:
-#
-#   ghq_transfer [--debug] [--valth]
-#
+
 lib_path = File.expand_path('../../lib', __FILE__)
 $:.unshift(lib_path)
 
