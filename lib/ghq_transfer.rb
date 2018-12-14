@@ -26,13 +26,13 @@ module GhqTransfer
 
         origin_url.chomp!
 
-        host, user, repo = if /^git@.+/ === origin_url
-                             extract_paths_from_ssh(origin_url)
-                           else
-                             extract_paths_from_https(origin_url)
-                           end
-
         begin
+          host, user, repo = if /^git@.+/ === origin_url
+                               extract_paths_from_ssh(origin_url)
+                             else
+                               extract_paths_from_https(origin_url)
+                             end
+
           dest_dir = ghq_root.join(host, user)
           dest_path = dest_dir.join(repo)
 
